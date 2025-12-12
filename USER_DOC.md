@@ -32,3 +32,6 @@ Credentials are not hardcoded. They are managed in the configuration file:
 To ensure everything is running:
 1.  Run `docker ps` in the terminal. You should see 3 containers (nginx, wordpress, mariadb) with status **Up**.
 2.  Run `make logs` to view real-time activity and ensure no errors are occurring.
+
+## 6. Checking Service volumes
+1.  Run 'docker inspect -f '{{ .Name }}: {{ range .Mounts }}{{ .Source }} -> {{ .Destination }}{{ end }}' nginx wordpress mariadb'

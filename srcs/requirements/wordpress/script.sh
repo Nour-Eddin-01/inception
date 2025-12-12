@@ -7,6 +7,9 @@ chmod +x wp-cli.phar
 
 if [ ! -f wp-config.php ]; then
 
+    echo "Waiting for MariaDB to be ready..."
+    sleep 10
+
     ./wp-cli.phar core download --allow-root
 
     # USE VARIABLES HERE ($MYSQL_DATABASE, etc)
