@@ -36,6 +36,7 @@ To ensure everything is running:
 ## 6. Checking Service volumes
 1.  Run 'docker inspect -f '{{ .Name }}: {{ range .Mounts }}{{ .Source }} -> {{ .Destination }}{{ end }}' nginx wordpress mariadb'
 
+## 7. Checking mariadb databases
 docker exec -it mariadb mariadb -u wpuser -p
 
 SHOW DATABASES;
